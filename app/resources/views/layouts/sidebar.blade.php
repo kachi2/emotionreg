@@ -66,8 +66,7 @@
                     </ul>
                     <div class="user-account-actions">
                         <ul class="g-3">
-                            <li><a href="" class="btn btn-primary"><span>{{ __('Deposit') }}</span></a></li>
-                            <li><a href="" class="btn btn-warning"><span>{{ __('Withdraw') }}</span></a></li>
+                            <li><a href="" class="btn btn-primary"><span>{{ __('Withdraw Wages') }}</span></a></li>
                         </ul>
                     </div>
                 </div>{{-- .nk-sidebar-widget --}}
