@@ -21,7 +21,7 @@
                 <div class="nk-sidebar-widget d-none d-xl-block">
                     <div class="user-account-info between-center">
                         <div class="user-account-main">
-                            <h6 class="overline-title-alt">{{ __(":Account Wages", ['account' => 'Available'])}}</h6>
+                            <h6 class="overline-title-alt">{{ __(":Account Balance", ['account' => 'Available'])}}</h6>
                             <div class="user-balance">{{ '50000'}} <small class="currency">USD</small></div>
                             <div class="user-balance-alt">{{ '50000'}} <span class="currency">USD</span></div>
                         </div>
@@ -66,7 +66,7 @@
                     </ul>
                     <div class="user-account-actions">
                         <ul class="g-3">
-                            <li><a href="" class="btn btn-primary"><span>{{ __('Withdraw Wages') }}</span></a></li>
+                            <li><a href="" class="btn btn-primary"><span>{{ __('Withdraw Salary') }}</span></a></li>
                         </ul>
                     </div>
                 </div>{{-- .nk-sidebar-widget --}}

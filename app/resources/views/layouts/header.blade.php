@@ -14,6 +14,7 @@
             {{-- @if(Panel::news())  --}}
             <div class="nk-header-news d-none d-xl-block">
                 {{-- {!! Panel::news() !!} --}}
+                Agent Dashboard
             </div>
             {{-- @endif --}} 
 
@@ -29,7 +30,7 @@
                                 {{-- @if(auth()->user()->is_verified) --}}
                                     {{-- <div class="user-status user-status-verified">{{ __('Verified') }}</div>
                                 @else --}}
-                                    <div class="user-status user-status-verified">{{ __('Agent Michael') }}</div>
+                                    <div class="user-status user-status-verified">{{ __('Michael') }}</div>
                                 {{-- @endif --}}
                                     <div class="user-name dropdown-indicator"></div>
                                 </div>
