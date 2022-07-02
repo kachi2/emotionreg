@@ -1,61 +1,142 @@
 <!DOCTYPE html>
-<html lang="zxx" class="js">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Zenith Capital">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <meta name="keywords" content="crypto, Trading, Cryptocurrency, Cryptocurrency Trading, Investments, Trading comapany, Brokers, Bitcoin, Bitcoin trading">
-    <meta name="description" content="{{config('app.name')}} is a highly trusted crypto Trading comapany, helping millions of individuals and firms across the globe to safely Trade and earn more with crypto currency.">
- <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="/fav.png">
-    <!-- Page Title  -->
-    <title> @if(isset($title)) {{$title}} @else Home  @endif | {{config('app.name')}}</title>
-    <!-- StyleSheets  -->
-    <link rel="stylesheet" href="{{asset('/asset/css/dashlite.css?ver=2.2.0 ')}}">
-    <link id="skin-default" rel="stylesheet" href="{{asset('/assets/css/theme.css?ver=2.2.0 ')}}">
-      <style type="text/css">
- /*google translate Dropdown */
- #google_translate_element select{
- background:#f6edfd;
- color:#383ffa;
- border: none;
- border-radius:3px;
- padding: 3px;
- margin: 2px 2px 2px 8px;
- }
- 
- /*google translate link | logo */
-   .goog-logo-link{
-   display:none!important;
-   }
- .goog-te-gadget{
- color:transparent!important;
- }
- /* google translate banner-frame */
- .goog-te-banner-frame{
- display:none !important;
- }
- #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
-.goog-text-highlight { background: none !important; box-shadow: none !important;}
- 
- body{top:0!important;}
+        <meta charset="utf-8" />
+        <title>Emotion Recognition System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-   </style>
- </head>
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{asset('/assets/images/favicon.ico')}}">
 
-{{-- 
-@include('partials.navbar')
-@include('partials.sidebar')
-@yield('content') --}}
+        <!-- jvectormap -->
+        <link href="plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
 
-    <script src="{{asset('/asset/js/bundle.js?ver=2.2.0 ')}}"></script>
-    <script src="{{asset('/asset/js/scripts.js?ver=2.2.0 ')}}"></script>
-    <script src="{{asset('/asset/js/charts/chart-crypto.js?ver=2.2.0')}}"></script>
-     <script src="{{asset('/asset/js/charts/gd-default.js?ver=2.2.0')}}"></script>
-    <script src="{{asset('/asset/js/charts/gd-analytics.js?ver=2.2.0 ')}}"></script>
-    <script src="{{asset('/asset/js/libs/jqvmap.js?ver=2.2.0 ')}}"></script>
+        <!-- App css -->
+        <link href="{{asset('/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('/assets/css/metisMenu.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('/assets/plugins/daterangepicker/daterangepicker.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+        <script defer src="{{asset('/emotion/face-api.min.js')}}"></script>
+        <script defer src="{{asset('/emotion/screen.js')}}"></script>
+        <script defer src="{{asset('/emotion/script.js')}}"></script>
+        <style>
+        .miky {
+      margin: 0;
+      padding: 0;
+      width: 50vw;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    canvas {
+      position: absolute;
+    }
+  </style>
+    </head>
+    <body class="">
+        <!-- Left Sidenav -->
+        <div class="left-sidenav">
+            <!-- LOGO -->
+            <div class="brand">
+                <a href="index.php" class="logo">
+                    <span>
+                   <h1 class="btn btn-outline-primary" style="font-weight:bolder"> Emotion Detection System</h1> 
+                    </span>
+                    
+                </a>
+            </div>
+            <!--end logo-->
+            <div class="menu-content h-100" data-simplebar style="background:#0c213a">
+                <ul class="metismenu left-sidenav-menu">
+                    <li class="menu-label mt-0">Main</li>
+                    <li>
+                        <a href="javascript: void(0);"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="../../logout.php"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Logout</span><span class="menu-arrow"></span></a> 
+                    </li> 
+                    <hr class="hr-dashed hr-menu">        
+                </ul>
+            </div>
+        </div>
+        <!-- end left-sidenav-->
+        
+
+        <div class="page-wrapper">
+            <!-- Top Bar Start -->
+            <div class="topbar">            
+                <!-- Navbar -->
+                <nav class="navbar-custom">    
+                    <ul class="list-unstyled topbar-nav float-end mb-0">  
+                        <li class="dropdown">
+                            
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i> Profile</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <span class="ms-1 nav-user-name hidden-sm"> </span>
+                                <img src="{{asset('/assets/images/users/user-1.jpg')}}" alt="profile-user" class="rounded-circle thumb-xs" />                                 
+                            </a>
+                        </li>
+                    </ul><!--end topbar-nav-->
+                    <ul class="list-unstyled topbar-nav mb-0">                        
+                        <li>
+                            <button class="nav-link button-menu-mobile">
+                                <i data-feather="menu" class="align-self-center topbar-icon"></i>
+                            </button>
+                        </li> 
+                        <li class="creat-btn">
+                            <div class="nav-link">
+                                <a class=" btn btn-sm btn-soft-primary" href="#" role="button">Yabatech HND3 Project</a>
+                            </div>                                
+                        </li>                           
+                    </ul>
+                </nav>
+                <!-- end navbar-->
+            </div>
+            <!-- Top Bar End -->
 
 
-    @yield('scripts')
-    </body>
+
+            @yield('content')
+
+
+
+
+<footer class="footer text-center text-sm-start">
+  All Rights Reserved.  &copy; <script>
+       document.write(new Date().getFullYear())
+   </script>  <span class="text-muted d-none d-sm-inline-block float-end"> <i
+           class="mdi mdi-heart text-danger"></i> Yabatech HND3 Students Project</span>
+</footer><!--end footer-->
+</div>
+<!-- end page content -->
+</div>
+<!-- end page-wrapper -->
+
+
+
+
+<!-- jQuery  -->
+<script src="{{asset('/assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('/assets/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('/assets/js/metismenu.min.js')}}"></script>
+<script src="{{asset('/assets/js/waves.js')}}"></script>
+<script src="{{asset('/assets/js/feather.min.js')}}"></script>
+<script src=".{{asset('/assets/js/simplebar.min.js')}}"></script>
+<script src="{{asset('/assets/js/moment.js')}}"></script>
+<script src="{{asset('/assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('/assets/plugins/jvectormap/jquery-jvectormap-us-aea-en.js')}}"></script>
+<script src="{{asset('/assets/pages/jquery.analytics_dashboard.init.js')}}"></script>
+<script src=".{{asset('/assets/js/app.js')}}"></script>
+
+</body>
 </html>
