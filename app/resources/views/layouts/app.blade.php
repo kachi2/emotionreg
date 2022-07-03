@@ -55,7 +55,7 @@
                 <ul class="metismenu left-sidenav-menu">
                     <li class="menu-label mt-0">Main</li>
                     <li>
-                        <a href="javascript: void(0);"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
+                        <a href="{{route('home')}}"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
                     </li>
                     <li>   
                         <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form1').submit()"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Logout</span><span class="menu-arrow"></span></a> 
@@ -85,7 +85,7 @@
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <span class="ms-1 nav-user-name hidden-sm"> </span>
+                                <span class="ms-1 nav-user-name hidden-sm">{{auth()->user()->name}}</span>
                                 <img src="{{asset('/assets/images/users/user-1.jpg')}}" alt="profile-user" class="rounded-circle thumb-xs" />                                 
                             </a>
                         </li>
