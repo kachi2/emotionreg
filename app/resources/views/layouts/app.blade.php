@@ -57,11 +57,14 @@
                     <li>
                         <a href="javascript: void(0);"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
                     </li>
-                    <li>
-                        <a href="../../logout.php"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Logout</span><span class="menu-arrow"></span></a> 
+                    <li>   
+                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form1').submit()"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Logout</span><span class="menu-arrow"></span></a> 
                     </li> 
                     <hr class="hr-dashed hr-menu">        
                 </ul>
+                <form action="{{route('logout')}}" method="post" id="form1"> 
+                  @csrf
+                </form>
             </div>
         </div>
         <!-- end left-sidenav-->
@@ -131,12 +134,12 @@
 <script src="{{asset('/assets/js/metismenu.min.js')}}"></script>
 <script src="{{asset('/assets/js/waves.js')}}"></script>
 <script src="{{asset('/assets/js/feather.min.js')}}"></script>
-<script src=".{{asset('/assets/js/simplebar.min.js')}}"></script>
+<script src="{{asset('/assets/js/simplebar.min.js')}}"></script>
 <script src="{{asset('/assets/js/moment.js')}}"></script>
 <script src="{{asset('/assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <script src="{{asset('/assets/plugins/jvectormap/jquery-jvectormap-us-aea-en.js')}}"></script>
 <script src="{{asset('/assets/pages/jquery.analytics_dashboard.init.js')}}"></script>
-<script src=".{{asset('/assets/js/app.js')}}"></script>
+<script src="{{asset('/assets/js/app.js')}}"></script>
 
 </body>
 </html>
